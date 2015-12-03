@@ -1,0 +1,21 @@
+<?php defined('SYSPATH') OR die('No direct access allowed.');
+class Setup_Controller extends Controller {
+
+	public function index(){
+		echo "setup appears to be working!";
+	}
+
+	public function doctrine()
+	{
+		echo "doctrine setup initated<br/>";
+		
+		Doctrine::generateModelsFromDb(
+			'application/models/doctrine',
+			array(),
+			array()
+		);
+		
+		echo "doctrine setup completed<br/>";
+	}
+
+}
